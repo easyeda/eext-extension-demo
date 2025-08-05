@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-Hans">
+	<head>
+		<title>删除图元</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<div><input id="componentforsch" type="checkbox" /> 元件</div>
+		<div><input id="wireforsch" type="checkbox" /> 导线</div>
+		<div><input id="textforsch" type="checkbox" /> 文本</div>
+		<div><input id="portforsch" type="checkbox" /> 端口</div>
+		<div style="padding-top: 8px">
+			<button onclick="getStatus()">确定</button>
+			<button onclick="eda.sys_IFrame.closeIFrame('deletePrimitivesDialogForSCH')">取消</button>
+		</div>
+		<script>
+			async function getStatus() {
+				const componentChecked = document.getElementById('componentforsch').checked;
+				const portChecked = document.getElementById('portforsch').checked;
+				const wireChecked = document.getElementById('wireforsch').checked;
+				const textChecked = document.getElementById('textforsch').checked;
+				if (componentChecked) {
+					const allItems = (await eda.sch_PrimitiveComponent?.getAll())?.filter((item) => item.getState_ComponentType() === 'part');
+					await eda.sch_PrimitiveComponent.delete(allItems);
+				}
+				if (portChecked) {
+					const allItems = (await eda.sch_PrimitiveComponent?.getAll())?.filter((item) => item.getState_ComponentType() === 'netport');
+					await eda.sch_PrimitiveComponent.delete(allItems);
+				}
+				if (wireChecked) {
+					const allItems = await eda.sch_PrimitiveWire?.getAll();
+					await eda.sch_PrimitiveWire.delete(allItems);
+				}
+				if (textChecked) {
+					const allItems = await eda.sch_PrimitiveText?.getAll();
+					await eda.sch_PrimitiveText.delete(allItems);
+				}
+				eda.sys_IFrame.closeIFrame('deletePrimitivesDialogForSCH');
+			}
+		</script>
+	</body>
+</html>

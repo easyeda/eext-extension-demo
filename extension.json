@@ -1,0 +1,94 @@
+{
+	"name": "extension-demo",
+	"uuid": "26cd10feaf5d4f2681ed1f764512d826",
+	"displayName": "扩展案例",
+	"description": "编辑器专业版的五个扩展案例，对原理图和PCB都生效",
+	"version": "1.0.2",
+	"publisher": "JLCEDA <support@lceda.cn>",
+	"engines": {
+		"eda": "^2.3"
+	},
+	"license": "Apache-2.0",
+	"repository": {
+		"type": "extension-store",
+		"url": ""
+	},
+	"categories": "PCB",
+	"keywords": ["Extension"],
+	"images": {
+		"logo": "./images/logo.png"
+	},
+	"homepage": "https://pro.lceda.cn",
+	"bugs": "https://lceda.cn/page/feedback?originPage=other",
+	"activationEvents": {},
+	"entry": "./dist/index",
+	"dependentExtensions": {},
+	"headerMenus": {
+		"sch": [
+			{
+				"id": "Extension Demo For SCH",
+				"title": "扩展案例",
+				"menuItems": [
+					{
+						"id": "Random Allocate Designates For SCH",
+						"title": "重新随机分配位号",
+						"registerFn": "randomAllocateDesignatesForSCH"
+					},
+					{
+						"id": "Batch Add Component Attributes For SCH",
+						"title": "批量添加元件属性...",
+						"registerFn": "batchAddComponentAttributesForSCH"
+					},
+					{
+						"id": "Batch Placement Text For SCH",
+						"title": "批量放置文本...",
+						"registerFn": "batchPlacementTextForSCH"
+					},
+					{
+						"id": "Delete Primitives For SCH",
+						"title": "删除图元...",
+						"registerFn": "deletePrimitivesForSCH"
+					},
+					{
+						"id": "Primitive Statistics For SCH",
+						"title": "图元统计...",
+						"registerFn": "statisticalPrimitivesForSCH"
+					}
+				]
+			}
+		],
+		"pcb": [
+			{
+				"id": "Extension Demo For PCB",
+				"title": "扩展案例",
+				"menuItems": [
+					{
+						"id": "Random Allocate Designates For PCB",
+						"title": "重新随机分配位号",
+						"registerFn": "randomAllocateDesignatesForPCB"
+					},
+					{
+						"id": "Batch Add Component Attributes For PCB",
+						"title": "批量添加元件属性...",
+						"registerFn": "batchAddComponentAttributesForPCB"
+					},
+					{
+						"id": "Batch Placement Text For PCB",
+						"title": "批量放置文本...",
+						"registerFn": "batchPlacementTextForPCB"
+					},
+					{
+						"id": "Delete Primitives For PCB",
+						"title": "删除图元...",
+						"registerFn": "deletePrimitivesForPCB"
+					},
+					{
+						"id": "Primitive Statistics For PCB",
+						"title": "图元统计...",
+						"registerFn": "statisticalPrimitivesForPCB"
+					}
+				]
+			}
+		]
+	}
+}

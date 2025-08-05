@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-Hans">
+	<head>
+		<title>删除图元</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<div><input id="component" type="checkbox" /> 元件</div>
+		<div><input id="track" type="checkbox" /> 导线</div>
+		<div><input id="pad" type="checkbox" /> 焊盘</div>
+		<div><input id="via" type="checkbox" /> 过孔</div>
+		<div><input id="pour" type="checkbox" /> 铺铜</div>
+		<div><input id="fill" type="checkbox" /> 填充</div>
+		<div><input id="line" type="checkbox" /> 线条</div>
+		<div><input id="text" type="checkbox" /> 文本</div>
+		<div style="padding-top: 8px">
+			<button onclick="getStatus()">确定</button>
+			<button onclick="eda.sys_IFrame.closeIFrame('deletePrimitivesDialogForPCB')">取消</button>
+		</div>
+		<script>
+			async function getStatus() {
+				const componentChecked = document.getElementById('component').checked;
+				const trackChecked = document.getElementById('track').checked;
+				const padChecked = document.getElementById('pad').checked;
+				const viaChecked = document.getElementById('via').checked;
+				const pourChecked = document.getElementById('pour').checked;
+				const fillChecked = document.getElementById('fill').checked;
+				const lineChecked = document.getElementById('line').checked;
+				const textChecked = document.getElementById('text').checked;
+				if (componentChecked) {
+					const allItems = await eda.pcb_PrimitiveComponent.getAll();
+					await eda.pcb_PrimitiveComponent.delete(allItems);
+				}
+				if (trackChecked) {
+					const allItemsForLine = await eda.pcb_PrimitiveLine.getAll();
+					await eda.pcb_PrimitiveLine.delete(allItemsForLine);
+					const allItemsForArc = await eda.pcb_PrimitiveArc.getAll();
+					await eda.pcb_PrimitiveArc.delete(allItemsForArc);
+				}
+				if (padChecked) {
+					const allItems = await eda.pcb_PrimitivePad.getAll();
+					await eda.pcb_PrimitivePad.delete(allItems);
+				}
+				if (viaChecked) {
+					const allItems = await eda.pcb_PrimitiveVia.getAll();
+					await eda.pcb_PrimitiveVia.delete(allItems);
+				}
+				if (pourChecked) {
+					const allItems = await eda.pcb_PrimitivePour.getAll();
+					await eda.pcb_PrimitivePour.delete(allItems);
+				}
+				if (fillChecked) {
+					const allItems = (await eda.pcb_PrimitiveFill.getAll())?.filter((item) => item.getState_Net() !== null);
+					await eda.pcb_PrimitiveFill.delete(allItems);
+				}
+				if (lineChecked) {
+					const allItems = (await eda.pcb_PrimitivePolyline.getAll())?.filter((item) => item.getState_Layer() !== 11);
+					await eda.pcb_PrimitivePolyline.delete(allItems);
+				}
+				if (textChecked) {
+					const allItems = await eda.pcb_PrimitiveString.getAll();
+					await eda.pcb_PrimitiveString.delete(allItems);
+				}
+				eda.sys_IFrame.closeIFrame('deletePrimitivesDialogForPCB');
+			}
+		</script>
+	</body>
+</html>

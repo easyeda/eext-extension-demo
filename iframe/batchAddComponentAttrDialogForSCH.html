@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-Hans">
+	<head>
+		<title>批量添加元件属性</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<div>属性名: <input id="propNameForSch" placeholder="designator" /></div>
+		<div>属性值: <input id="propValueForSch" placeholder="R1" /></div>
+		<div style="padding-top: 8px">
+			<button id="submitBtn">确定</button>
+			<button onclick="eda.sys_IFrame.closeIFrame('batchAddComponentAttrDialogForSCH')">取消</button>
+		</div>
+		<script>
+			document.getElementById('submitBtn').addEventListener('click', async () => {
+				const propName = document.getElementById('propNameForSch').value.trim();
+				let propValue = document.getElementById('propValueForSch').value.trim();
+				if (!propName || !propValue) {
+					eda.sys_Message.showToastMessage('属性名和属性值不能为空！');
+					return;
+				}
+				if (
+					propValue.toLowerCase() === 'true' ||
+					propValue.toLowerCase() === 'yes' ||
+					propValue.toLowerCase() === 'false' ||
+					propValue.toLowerCase() === 'no'
+				) {
+					if (propValue.toLowerCase() === 'true' || propValue.toLowerCase() === 'yes') {
+						propValue = true;
+					} else {
+						propValue = false;
+					}
+				}
+				if (propName === 'layer') {
+					propValue = Number(propValue);
+				}
+				const basicProp = [
+					'mirror',
+					'x',
+					'y',
+					'rotation',
+					'primitiveLock',
+					'addIntoBom',
+					'addIntoPcb',
+					'designator',
+					'name',
+					'uniqueId',
+					'manufacturer',
+					'manufacturerId',
+					'supplier',
+					'supplierId',
+				];
+				let property;
+				if (basicProp.includes(propName)) {
+					property = {
+						[propName]: propValue,
+					};
+				} else {
+					property = {
+						'otherProperty': {
+							[propName]: propValue,
+						},
+					};
+				}
+
+				const allComponents = (await eda.sch_PrimitiveComponent.getAll()).filter((item) => item.getState_ComponentType() === 'part');
+				for (const component of allComponents) {
+					const primitiveId = component.getState_PrimitiveId();
+					await eda.sch_PrimitiveComponent.modify(primitiveId, property);
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+{
+	"About": "About",
+	"EasyEDA extension SDK v": "EasyEDA extension SDK v${1}",
+	"Select Delete Primitives": "Select Delete Primitives",
+	"Delete Primitive": "Delete Primitive",
+	"Confirm": "Confirm",
+	"Primitive Statistics": "Primitive Statistics",
+	"Pad：": "Pad：${1}",
+	"Component: Track: Pad: Via: Pour: Fill: Line: Text: ": "Component: ${1}\n Track: ${2}\n Pad: ${3}\n Via: ${4}\n Pour: ${5}\n Fill: ${6}\n Line: ${7}\n Text: ${8} ",
+	"Component: Port: Text: Wire:": "Component: ${1}\n Port: ${2}\n Text: ${3}\n Wire: ${4}"
+}

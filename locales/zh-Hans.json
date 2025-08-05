@@ -1,0 +1,11 @@
+{
+	"About": "关于",
+	"EasyEDA extension SDK v": "嘉立创EDA 扩展 SDK v${1}",
+	"Select Delete Primitives": "选择删除图元",
+	"Delete Primitive": "删除图元",
+	"Confirm": "确认",
+	"Primitive Statistics": "图元统计",
+	"Pad：": "焊盘：${1}",
+	"Component: Track: Pad: Via: Pour: Fill: Line: Text:": "元件: ${1}\n 导线: ${2}\n 焊盘: ${3}\n 过孔: ${4}\n 铺铜: ${5}\n 填充: ${6}\n 线条: ${7}\n 文本: ${8} ",
+	"Component: Port: Text: Wire:": "元件: ${1}\n 端口: ${2}\n 文本: ${3}\n 导线: ${4}"
+}
