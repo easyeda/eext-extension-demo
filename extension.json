@@ -2,7 +2,7 @@
 	"name": "extension-demo",
 	"uuid": "26cd10feaf5d4f2681ed1f764512d826",
 	"displayName": "扩展案例",
-	"description": "编辑器专业版的五个扩展案例，对原理图和PCB都生效",
+	"description": "嘉立创EDA&EasyEDA的五个简单扩展案例，可用于原理图和PCB",
 	"version": "1.0.2",
 	"publisher": "JLCEDA <support@lceda.cn>",
 	"engines": {

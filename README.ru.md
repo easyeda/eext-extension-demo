@@ -1,43 +1,11 @@
-[简体中文](./README.md) | [English](./README.en.md) | [繁體中文](./README.zh-Hant.md) | [日本語](./README.ja.md) | [Русский](#)
+# Расширенные случаи
 
-# pro-api-sdk
+Это расширенный пример demo, который помогает разработчикам изучать и использовать Jiali Creative EDA API, который покрывает такие интерфейсы, как всплывающие окна, кнопки, добавления и удаления графических элементов и т. Д., Функции которого делают только иллюстративное обучение.
 
-嘉立创EDA & EasyEDA Pro Edition Расширьте возможности инструментов разработки API
+Случай расширения / / Этот случай действует как для схем, так и для PCB
+* - Перераспределение случайных номеров битов
+^ - - - Добавление атрибутов элементов в партии. .../ / Нажмите на всплывающее окно после нажатия, введите имя атрибута, значение атрибута, определите после применения ко всем компонентам
+# - - - Кладите текст в пакеты. .../ / Нажмите на всплывающее окно после щелчка, введите текст, количество, интервал, автоматически разместить в холсте, используя шрифт по умолчанию
+↑ - - Удалить графы. .../ / Нажмите на всплывающее окно после нажатия, выберите элемент графа, после подтверждения удалите все элементы того же типа. Элемент рисунка холста: "Элемент, провод, текст, порт" (принципиальная схема); & quot; Элементы, провода, сварочные диски, перфорация, прокладка меди, заполнение, провода, текст & quot; (PCB)
+^ - - Статистика графов. .../ / Нажмите на всплывающее окно после щелчка, чтобы показать элементы рисунка холста и соответствующее количество. Элемент рисунка холста: "Элемент, провод, текст, порт" (принципиальная схема); & quot; Элементы, провода, сварочные диски, перфорация, прокладка меди, заполнение, провода, текст & quot; (PCB)
 
-<a href="https://github.com/easyeda/pro-api-sdk" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/stars/easyeda/pro-api-sdk" alt="GitHub Repo Stars" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>&nbsp;<a href="https://github.com/easyeda/pro-api-sdk/issues" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/issues/easyeda/pro-api-sdk" alt="GitHub Issues" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>&nbsp;<a href="https://github.com/easyeda/pro-api-sdk" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/repo-size/easyeda/pro-api-sdk" alt="GitHub Repo Size" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>&nbsp;<a href="https://choosealicense.com/licenses/apache-2.0/" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/license/easyeda/pro-api-sdk" alt="GitHub License" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>&nbsp;<a href="https://www.npmjs.com/package/@jlceda/pro-api-types" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/npm/v/%40jlceda%2Fpro-api-types?label=pro-api-types" alt="NPM Version" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>&nbsp;<a href="https://www.npmjs.com/package/@jlceda/pro-api-types" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/npm/d18m/%40jlceda%2Fpro-api-types" alt="NPM Downloads" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
-
-> [!NOTE]
->
-> Для получения подробной документации по разработке, пожалуйста, посетите: [https://prodocs.easyeda.com/en/api/guide/](https://prodocs.easyeda.com/en/api/guide/)
-
-## Войти в разработку
-
-Этот набор инструментов разработки содержит все среды и инструменты для разработки пакета расширений [EasyEDA Pro Edition](https://pro.easyeda.com/), а также имеет встроенные рекомендуемые правила для Prettier и ESLint.
-
-1. Клонируйте репозиторий проекта [pro-api-sdk](https://github.com/easyeda/pro-api-sdk) на свой локальный компьютер
-
-    ```shell
-    git clone --depth=1 https://github.com/easyeda/pro-api-sdk.git
-    ```
-
-2. Инициализация среды разработки (установка зависимостей)
-
-    ```shell
-    npm install
-    ```
-
-3. Внесите несколько изменений...
-
-4. Компиляция пакета расширения
-
-    ```shell
-    npm run build
-    ```
-
-5. Установите пакет расширения, сгенерированный в разделе `./build/dist/` в EasyEDA Pro Edition
-
-## Лицензия с открытым исходным кодом
-
-<a href="https://choosealicense.com/licenses/apache-2.0/" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/license/easyeda/pro-api-sdk" alt="GitHub License" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
-
-Эта группа инструментов разработки использует лицензионное соглашение с открытым исходным кодом [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/), и вы можете использовать только информацию о товарном знаке **嘉立创EDA**, **EasyEDA** для **части описания функции** и **части названия выпуска с открытым исходным кодом** пакета расширений, разработанного на основе этой группы инструментов.

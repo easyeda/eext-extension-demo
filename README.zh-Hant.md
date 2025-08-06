@@ -1,43 +1,11 @@
-[简体中文](./README.md) | [English](./README.en.md) | [繁體中文](#) | [日本語](./README.ja.md) | [Русский](./README.ru.md)
+#擴展案例
 
-# pro-api-sdk
+這個是一個擴展的demo示例，用以幫助開發者學習和使用嘉立創EDA API，覆蓋了彈窗、按鈕、圖元增删改查等介面，其功能僅做示意學習。
 
-嘉立創EDA & EasyEDA 專業版擴展 API 開發工具
+擴展案例//這個案例對原理圖和PCB都生效
+|————重新隨機分配比特號
+|————批量添加元件内容. .. //點擊後彈窗，輸入内容名，屬性值，確定後應用到全部元件
+|————批量放置文字. .. //點擊後彈窗，輸入文字，數量，間距，自動擺放在畫布，使用預設字體
+|————删除圖元. .. //點擊後彈窗，勾選圖元，確認後删除全部同類型圖元。 畫布圖元：`元件、導線、文字、埠`（原理圖）； `元件、導線、焊盤、過孔、鋪銅、填充、線條、文字`（PCB）
+|————圖元統計. .. //點擊後彈窗，顯示畫布圖元以及對應數量。 畫布圖元：`元件、導線、文字、埠`（原理圖）； `元件、導線、焊盤、過孔、鋪銅、填充、線條、文字`（PCB）
 
-<a href="https://github.com/easyeda/pro-api-sdk" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/stars/easyeda/pro-api-sdk" alt="GitHub Repo Stars" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>&nbsp;<a href="https://github.com/easyeda/pro-api-sdk/issues" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/issues/easyeda/pro-api-sdk" alt="GitHub Issues" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>&nbsp;<a href="https://github.com/easyeda/pro-api-sdk" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/repo-size/easyeda/pro-api-sdk" alt="GitHub Repo Size" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>&nbsp;<a href="https://choosealicense.com/licenses/apache-2.0/" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/license/easyeda/pro-api-sdk" alt="GitHub License" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>&nbsp;<a href="https://www.npmjs.com/package/@jlceda/pro-api-types" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/npm/v/%40jlceda%2Fpro-api-types?label=pro-api-types" alt="NPM Version" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>&nbsp;<a href="https://www.npmjs.com/package/@jlceda/pro-api-types" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/npm/d18m/%40jlceda%2Fpro-api-types" alt="NPM Downloads" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
-
-> [!NOTE]
->
-> 有關 嘉立創EDA專業版 擴展程式開發的更多資訊，請訪問：[https://prodocs.easyeda.com/cn/api/guide/](https://prodocs.easyeda.com/cn/api/guide/)
-
-## 進入開發
-
-本開發工具組包含了用於開發 [嘉立創EDA專業版](https://pro.easyeda.com/) 擴展程式的所有環境和工具，並內置了 Prettier 和 ESLint 的推薦規則。
-
-1. 克隆 [pro-api-sdk](https://github.com/easyeda/pro-api-sdk) 項目倉庫到本地
-
-    ```shell
-    git clone --depth=1 https://github.com/easyeda/pro-api-sdk.git
-    ```
-
-2. 初始化開發環境（安裝依賴）
-
-    ```shell
-    npm install
-    ```
-
-3. 進行些許變更 ...
-
-4. 編譯擴展程式
-
-    ```shell
-    npm run build
-    ```
-
-5. 在 嘉立創EDA專業版 中安裝生成在 `./build/dist/` 下的擴展程式
-
-## 開源許可
-
-<a href="https://choosealicense.com/licenses/apache-2.0/" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/license/easyeda/pro-api-sdk" alt="GitHub License" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
-
-本開發工具組使用 [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/) 開源許可協定，你僅可以將 **嘉立创EDA**、**嘉立創EDA**、**EasyEDA** 商標資訊用於依託於本工具組開發的擴展程式的 **功能描述部分** 和 **開源發佈的標題部分**。
