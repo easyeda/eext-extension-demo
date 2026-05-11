@@ -1,94 +1,96 @@
 {
-	"name": "eext-extension-demo",
-	"uuid": "26cd10feaf5d4f2681ed1f764512d826",
-	"displayName": "扩展案例",
-	"description": "嘉立创EDA & EasyEDA的五个简单扩展开发案例，可用于原理图和PCB",
-	"version": "1.0.2",
-	"publisher": "JLCEDA <support@lceda.cn>",
-	"engines": {
-		"eda": "^2.3"
-	},
-	"license": "Apache-2.0",
-	"repository": {
-		"type": "extension-store",
-		"url": ""
-	},
-	"categories": "PCB",
-	"keywords": ["Extension"],
-	"images": {
-		"logo": "./images/logo.png"
-	},
-	"homepage": "https://github.com/easyeda/eext-extension-demo",
-	"bugs": "https://github.com/easyeda/eext-extension-demo/issues",
-	"activationEvents": {},
-	"entry": "./dist/index",
-	"dependentExtensions": {},
-	"headerMenus": {
-		"sch": [
-			{
-				"id": "Extension Demo For SCH",
-				"title": "扩展案例",
-				"menuItems": [
-					{
-						"id": "Random Allocate Designates For SCH",
-						"title": "重新随机分配位号",
-						"registerFn": "randomAllocateDesignatesForSCH"
-					},
-					{
-						"id": "Batch Add Component Attributes For SCH",
-						"title": "批量添加元件属性...",
-						"registerFn": "batchAddComponentAttributesForSCH"
-					},
-					{
-						"id": "Batch Placement Text For SCH",
-						"title": "批量放置文本...",
-						"registerFn": "batchPlacementTextForSCH"
-					},
-					{
-						"id": "Delete Primitives For SCH",
-						"title": "删除图元...",
-						"registerFn": "deletePrimitivesForSCH"
-					},
-					{
-						"id": "Primitive Statistics For SCH",
-						"title": "图元统计...",
-						"registerFn": "statisticalPrimitivesForSCH"
-					}
-				]
-			}
-		],
-		"pcb": [
-			{
-				"id": "Extension Demo For PCB",
-				"title": "扩展案例",
-				"menuItems": [
-					{
-						"id": "Random Allocate Designates For PCB",
-						"title": "重新随机分配位号",
-						"registerFn": "randomAllocateDesignatesForPCB"
-					},
-					{
-						"id": "Batch Add Component Attributes For PCB",
-						"title": "批量添加元件属性...",
-						"registerFn": "batchAddComponentAttributesForPCB"
-					},
-					{
-						"id": "Batch Placement Text For PCB",
-						"title": "批量放置文本...",
-						"registerFn": "batchPlacementTextForPCB"
-					},
-					{
-						"id": "Delete Primitives For PCB",
-						"title": "删除图元...",
-						"registerFn": "deletePrimitivesForPCB"
-					},
-					{
-						"id": "Primitive Statistics For PCB",
-						"title": "图元统计...",
-						"registerFn": "statisticalPrimitivesForPCB"
-					}
-				]
-			}
-		]
-	}
+  "name": "eext-extension-demo",
+  "uuid": "26cd10feaf5d4f2681ed1f764512d826",
+  "displayName": "扩展案例",
+  "description": "嘉立创EDA & EasyEDA的五个简单扩展开发案例，可用于原理图和PCB",
+  "version": "1.0.2",
+  "publisher": "EasyEDA",
+  "engines": {
+    "eda": "^2.3"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/easyeda/eext-extension-demo"
+  },
+  "categories": "PCB",
+  "keywords": [
+    "Extension"
+  ],
+  "images": {
+    "logo": "./images/logo.png"
+  },
+  "homepage": "https://github.com/easyeda",
+  "bugs": "https://github.com/easyeda/eext-extension-demo/issues",
+  "activationEvents": {},
+  "entry": "./dist/index",
+  "dependentExtensions": {},
+  "headerMenus": {
+    "sch": [
+      {
+        "id": "Extension Demo For SCH",
+        "title": "扩展案例",
+        "menuItems": [
+          {
+            "id": "Random Allocate Designates For SCH",
+            "title": "重新随机分配位号",
+            "registerFn": "randomAllocateDesignatesForSCH"
+          },
+          {
+            "id": "Batch Add Component Attributes For SCH",
+            "title": "批量添加元件属性...",
+            "registerFn": "batchAddComponentAttributesForSCH"
+          },
+          {
+            "id": "Batch Placement Text For SCH",
+            "title": "批量放置文本...",
+            "registerFn": "batchPlacementTextForSCH"
+          },
+          {
+            "id": "Delete Primitives For SCH",
+            "title": "删除图元...",
+            "registerFn": "deletePrimitivesForSCH"
+          },
+          {
+            "id": "Primitive Statistics For SCH",
+            "title": "图元统计...",
+            "registerFn": "statisticalPrimitivesForSCH"
+          }
+        ]
+      }
+    ],
+    "pcb": [
+      {
+        "id": "Extension Demo For PCB",
+        "title": "扩展案例",
+        "menuItems": [
+          {
+            "id": "Random Allocate Designates For PCB",
+            "title": "重新随机分配位号",
+            "registerFn": "randomAllocateDesignatesForPCB"
+          },
+          {
+            "id": "Batch Add Component Attributes For PCB",
+            "title": "批量添加元件属性...",
+            "registerFn": "batchAddComponentAttributesForPCB"
+          },
+          {
+            "id": "Batch Placement Text For PCB",
+            "title": "批量放置文本...",
+            "registerFn": "batchPlacementTextForPCB"
+          },
+          {
+            "id": "Delete Primitives For PCB",
+            "title": "删除图元...",
+            "registerFn": "deletePrimitivesForPCB"
+          },
+          {
+            "id": "Primitive Statistics For PCB",
+            "title": "图元统计...",
+            "registerFn": "statisticalPrimitivesForPCB"
+          }
+        ]
+      }
+    ]
+  }
 }
