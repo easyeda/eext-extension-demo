@@ -1,5 +1,7 @@
 # Extended Case
 
+[中文](./README.md)
+
 This is an extended demo example designed to help developers learn and use the JLCPCB EDA API. It covers interfaces such as pop-up windows, buttons, and adding, deleting, modifying, and querying graphics primitives. Its functions are only for illustrative learning purposes.
 
 Extended Case // This case is valid for both schematics and PCBs
