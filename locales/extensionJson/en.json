@@ -1,3 +1,6 @@
 {
-	"About...": "About..."
+	"About...": "About...",
+	"扩展案例": "Extension Demo",
+	"嘉立创EDA & EasyEDA的五个简单扩展开发案例，可用于原理图和PCB": "Five simple extension development examples for EasyEDA, usable in both Schematic and PCB",
+	"Extension": "Extension"
 }

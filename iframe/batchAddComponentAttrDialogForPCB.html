@@ -1,23 +1,35 @@
 <!doctype html>
 <html lang="zh-Hans">
 	<head>
-		<title>批量添加元件属性</title>
+		<title></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
-		<div>属性名: <input id="propName" placeholder="designator" /></div>
-		<div>属性值: <input id="propValue" placeholder="R1" /></div>
+		<div><span id="lblPropName"></span> <input id="propName" placeholder="designator" /></div>
+		<div><span id="lblPropValue"></span> <input id="propValue" placeholder="R1" /></div>
 		<div style="padding-top: 8px">
-			<button id="submitBtn">确定</button>
-			<button onclick="eda.sys_IFrame.closeIFrame('batchAddComponentForPCB')">取消</button>
+			<button id="submitBtn"></button>
+			<button id="cancelBtn" onclick="eda.sys_IFrame.closeIFrame('batchAddComponentForPCB')"></button>
 		</div>
 		<script>
+			var edaObj = (typeof eda !== 'undefined') ? eda : (window.parent && window.parent.eda);
+			function t(tag) {
+				if (edaObj && edaObj.sys_I18n) return edaObj.sys_I18n.text(tag);
+				return tag;
+			}
+
+			document.title = t('Batch Add Component Attributes');
+			document.getElementById('lblPropName').textContent = t('Property Name:');
+			document.getElementById('lblPropValue').textContent = t('Property Value:');
+			document.getElementById('submitBtn').textContent = t('Confirm');
+			document.getElementById('cancelBtn').textContent = t('Cancel');
+
 			document.getElementById('submitBtn').addEventListener('click', async () => {
 				const propName = document.getElementById('propName').value.trim();
 				let propValue = document.getElementById('propValue').value.trim();
 				if (!propName || !propValue) {
-					eda.sys_Message.showToastMessage('属性名和属性值不能为空！');
+					eda.sys_Message.showToastMessage(t('Property name and value cannot be empty!'));
 					return;
 				}
 				if (

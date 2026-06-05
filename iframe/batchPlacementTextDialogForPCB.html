@@ -1,19 +1,32 @@
 <!doctype html>
 <html lang="zh-Hans">
 	<head>
-		<title>批量放置文本</title>
+		<title></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
-		<div>文本：<input id="textcontentforpcb" type="text" placeholder="abc" /></div>
-		<div>数量：<input id="numberforpcb" type="number" placeholder="10" /></div>
-		<div>间距：<input id="distanceforpcb" type="number" placeholder="10" /></div>
+		<div><span id="lblText"></span><input id="textcontentforpcb" type="text" placeholder="abc" /></div>
+		<div><span id="lblQuantity"></span><input id="numberforpcb" type="number" placeholder="10" /></div>
+		<div><span id="lblSpacing"></span><input id="distanceforpcb" type="number" placeholder="10" /></div>
 		<div style="padding-top: 8px">
-			<button onclick="handlePlacement()">确定</button>
-			<button onclick="eda.sys_IFrame.closeIFrame('batchPlacementTextDialogForPCB')">取消</button>
+			<button id="confirmBtn" onclick="handlePlacement()"></button>
+			<button id="cancelBtn" onclick="eda.sys_IFrame.closeIFrame('batchPlacementTextDialogForPCB')"></button>
 		</div>
 		<script>
+			var edaObj = (typeof eda !== 'undefined') ? eda : (window.parent && window.parent.eda);
+			function t(tag) {
+				if (edaObj && edaObj.sys_I18n) return edaObj.sys_I18n.text(tag);
+				return tag;
+			}
+
+			document.title = t('Batch Place Text');
+			document.getElementById('lblText').textContent = t('Text:');
+			document.getElementById('lblQuantity').textContent = t('Quantity:');
+			document.getElementById('lblSpacing').textContent = t('Spacing:');
+			document.getElementById('confirmBtn').textContent = t('Confirm');
+			document.getElementById('cancelBtn').textContent = t('Cancel');
+
 			async function handlePlacement() {
 				const text = document.getElementById('textcontentforpcb').value;
 				const number = Number(document.getElementById('numberforpcb').value);

@@ -1,20 +1,34 @@
 <!doctype html>
 <html lang="zh-Hans">
 	<head>
-		<title>删除图元</title>
+		<title></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
-		<div><input id="componentforsch" type="checkbox" /> 元件</div>
-		<div><input id="wireforsch" type="checkbox" /> 导线</div>
-		<div><input id="textforsch" type="checkbox" /> 文本</div>
-		<div><input id="portforsch" type="checkbox" /> 端口</div>
+		<div><input id="componentforsch" type="checkbox" /> <span id="lblComponent"></span></div>
+		<div><input id="wireforsch" type="checkbox" /> <span id="lblWire"></span></div>
+		<div><input id="textforsch" type="checkbox" /> <span id="lblText"></span></div>
+		<div><input id="portforsch" type="checkbox" /> <span id="lblPort"></span></div>
 		<div style="padding-top: 8px">
-			<button onclick="getStatus()">确定</button>
-			<button onclick="eda.sys_IFrame.closeIFrame('deletePrimitivesDialogForSCH')">取消</button>
+			<button id="confirmBtn" onclick="getStatus()"></button>
+			<button id="cancelBtn" onclick="eda.sys_IFrame.closeIFrame('deletePrimitivesDialogForSCH')"></button>
 		</div>
 		<script>
+			var edaObj = (typeof eda !== 'undefined') ? eda : (window.parent && window.parent.eda);
+			function t(tag) {
+				if (edaObj && edaObj.sys_I18n) return edaObj.sys_I18n.text(tag);
+				return tag;
+			}
+
+			document.title = t('Delete Primitives');
+			document.getElementById('lblComponent').textContent = t('Component');
+			document.getElementById('lblWire').textContent = t('Wire');
+			document.getElementById('lblText').textContent = t('Text');
+			document.getElementById('lblPort').textContent = t('Port');
+			document.getElementById('confirmBtn').textContent = t('Confirm');
+			document.getElementById('cancelBtn').textContent = t('Cancel');
+
 			async function getStatus() {
 				const componentChecked = document.getElementById('componentforsch').checked;
 				const portChecked = document.getElementById('portforsch').checked;

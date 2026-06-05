@@ -1,24 +1,42 @@
 <!doctype html>
 <html lang="zh-Hans">
 	<head>
-		<title>删除图元</title>
+		<title></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
-		<div><input id="component" type="checkbox" /> 元件</div>
-		<div><input id="track" type="checkbox" /> 导线</div>
-		<div><input id="pad" type="checkbox" /> 焊盘</div>
-		<div><input id="via" type="checkbox" /> 过孔</div>
-		<div><input id="pour" type="checkbox" /> 铺铜</div>
-		<div><input id="fill" type="checkbox" /> 填充</div>
-		<div><input id="line" type="checkbox" /> 线条</div>
-		<div><input id="text" type="checkbox" /> 文本</div>
+		<div><input id="component" type="checkbox" /> <span id="lblComponent"></span></div>
+		<div><input id="track" type="checkbox" /> <span id="lblTrack"></span></div>
+		<div><input id="pad" type="checkbox" /> <span id="lblPad"></span></div>
+		<div><input id="via" type="checkbox" /> <span id="lblVia"></span></div>
+		<div><input id="pour" type="checkbox" /> <span id="lblPour"></span></div>
+		<div><input id="fill" type="checkbox" /> <span id="lblFill"></span></div>
+		<div><input id="line" type="checkbox" /> <span id="lblLine"></span></div>
+		<div><input id="text" type="checkbox" /> <span id="lblText"></span></div>
 		<div style="padding-top: 8px">
-			<button onclick="getStatus()">确定</button>
-			<button onclick="eda.sys_IFrame.closeIFrame('deletePrimitivesDialogForPCB')">取消</button>
+			<button id="confirmBtn" onclick="getStatus()"></button>
+			<button id="cancelBtn" onclick="eda.sys_IFrame.closeIFrame('deletePrimitivesDialogForPCB')"></button>
 		</div>
 		<script>
+			var edaObj = (typeof eda !== 'undefined') ? eda : (window.parent && window.parent.eda);
+			function t(tag) {
+				if (edaObj && edaObj.sys_I18n) return edaObj.sys_I18n.text(tag);
+				return tag;
+			}
+
+			document.title = t('Delete Primitives');
+			document.getElementById('lblComponent').textContent = t('Component');
+			document.getElementById('lblTrack').textContent = t('Track');
+			document.getElementById('lblPad').textContent = t('Pad');
+			document.getElementById('lblVia').textContent = t('Via');
+			document.getElementById('lblPour').textContent = t('Pour');
+			document.getElementById('lblFill').textContent = t('Fill');
+			document.getElementById('lblLine').textContent = t('Line');
+			document.getElementById('lblText').textContent = t('Text');
+			document.getElementById('confirmBtn').textContent = t('Confirm');
+			document.getElementById('cancelBtn').textContent = t('Cancel');
+
 			async function getStatus() {
 				const componentChecked = document.getElementById('component').checked;
 				const trackChecked = document.getElementById('track').checked;
